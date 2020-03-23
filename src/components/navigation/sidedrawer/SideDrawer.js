@@ -39,9 +39,8 @@ const Menu = styled.div`
   margin-top: 6rem;
   height: 100vh;
   background-color: var(--color-mainDark);
-  opacity: ${props => (props.opened ? "1" : "0")};
   transform: translateY(${props => (props.opened ? "0%" : "-100%")});
-  transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
 `;
 
 const SideDrawer = () => {
