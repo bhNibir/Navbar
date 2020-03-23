@@ -13,6 +13,7 @@ const FixedWrapper = styled.div`
   width: 100%;
   height: 6rem;
   display: none;
+  z-index: 10;
 
   @media ${props => props.theme.mediaQueries.smallest} {
     display: flex;
@@ -27,6 +28,18 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
+const Menu = styled.div`
+  width: 100%;
+  background-color: var(--color-mainDark);
+  height: 100vh;
+  opacity: ${props => (props.opened ? "1" : "0")};
+  transform:; translateY(${props => (props.opened ? "100%" : "0%")});
+  transition: all .25s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
+
 const SideDrawer = () => {
   const [isOpened, setIsOpened] = useState(false);
 
@@ -38,6 +51,7 @@ const SideDrawer = () => {
           <Hamburger opened={isOpened} clicked={() => setIsOpened(!isOpened)} />
         </Wrapper>
       </FixedWrapper>
+      <Menu opened={isOpened}>hello, im the menu</Menu>
     </>
   );
 };
