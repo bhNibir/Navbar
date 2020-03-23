@@ -41,6 +41,11 @@ const Menu = styled.div`
   background-color: var(--color-mainDark);
   transform: translateY(${props => (props.opened ? "0%" : "-100%")});
   transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+  display: none;
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    display: flex;
+  }
 `;
 
 const SideDrawer = () => {
