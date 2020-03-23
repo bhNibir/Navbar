@@ -5,6 +5,7 @@ import Layout from "./hoc/layout/Layout";
 import Home from "./containers/home/Home";
 import Todos from "./containers/todos/Todos";
 
+// Redirect being set to '/' will send a incorrect URL of the page to the homepage
 const App = () => {
   return (
     <>
