@@ -13,14 +13,14 @@ const Ul = styled.ul`
   height: 100%;
 `;
 
-const NavItems = ({ mobile }) => {
+const NavItems = ({ mobile, clicked }) => {
   return (
     <Nav mobile={mobile}>
       <Ul mobile={mobile}>
-        <NavItem mobile={mobile} link="/">
+        <NavItem clicked={clicked} mobile={mobile} link="/">
           home
         </NavItem>
-        <NavItem mobile={mobile} link="/todos">
+        <NavItem clicked={clicked} mobile={mobile} link="/todos">
           todos
         </NavItem>
       </Ul>

@@ -35,10 +35,16 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const NavItem = ({ link, children, mobile }) => {
+const NavItem = ({ link, children, mobile, clicked }) => {
   return (
     <Li>
-      <StyledNavLink exact activeClassName="active" mobile={mobile} to={link}>
+      <StyledNavLink
+        onClick={clicked}
+        exact
+        activeClassName="active"
+        mobile={mobile}
+        to={link}
+      >
         {children}
       </StyledNavLink>
     </Li>
