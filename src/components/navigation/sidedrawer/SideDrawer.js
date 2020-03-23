@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../../logo/Logo";
-// import NavItems from "../navitems/NavItems";
+import NavItems from "../navitems/NavItems";
 import Hamburger from "./hamburger/Hamburger";
 
 const FixedWrapper = styled.div`
   position: fixed;
-  background-color: var(--color-main);
+  background-color: var(--color-mainDark);
   padding: 0rem 2rem;
   top: 0;
   left: 0;
@@ -29,15 +29,19 @@ const Wrapper = styled.div`
 `;
 
 const Menu = styled.div`
-  width: 100%;
-  background-color: var(--color-mainDark);
-  height: 100vh;
-  opacity: ${props => (props.opened ? "1" : "0")};
-  transform:; translateY(${props => (props.opened ? "100%" : "0%")});
-  transition: all .25s ease-in-out;
   position: fixed;
-  top: 0;
+  width: 100%;
   left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+  height: 100vh;
+  background-color: var(--color-mainDark);
+  opacity: ${props => (props.opened ? "1" : "0")};
+  transform: translateY(${props => (props.opened ? "0%" : "-100%")});
+  transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
 `;
 
 const SideDrawer = () => {
@@ -51,7 +55,9 @@ const SideDrawer = () => {
           <Hamburger opened={isOpened} clicked={() => setIsOpened(!isOpened)} />
         </Wrapper>
       </FixedWrapper>
-      <Menu opened={isOpened}>hello, im the menu</Menu>
+      <Menu opened={isOpened}>
+        <NavItems mobile />
+      </Menu>
     </>
   );
 };

@@ -8,14 +8,15 @@ const Nav = styled.nav`
 `;
 const Ul = styled.ul`
   display: flex;
+  flex-direction: ${props => (props.mobile ? "column" : "row")};
   align-items: center;
   height: 100%;
 `;
 
-const NavItems = () => {
+const NavItems = ({ mobile }) => {
   return (
     <Nav>
-      <Ul>
+      <Ul mobile={mobile}>
         <NavItem link="/">home</NavItem>
         <NavItem link="/todos">todos</NavItem>
       </Ul>
