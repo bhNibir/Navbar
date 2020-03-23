@@ -15,10 +15,14 @@ const Ul = styled.ul`
 
 const NavItems = ({ mobile }) => {
   return (
-    <Nav>
+    <Nav mobile={mobile}>
       <Ul mobile={mobile}>
-        <NavItem link="/">home</NavItem>
-        <NavItem link="/todos">todos</NavItem>
+        <NavItem mobile={mobile} link="/">
+          home
+        </NavItem>
+        <NavItem mobile={mobile} link="/todos">
+          todos
+        </NavItem>
       </Ul>
     </Nav>
   );
